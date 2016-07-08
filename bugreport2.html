@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>DriverPack Solution</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <style type="text/css">
+    @font-face {
+      font-family: proxima; /* Имя шрифта */
+      src: url("fonts/Proxima Nova Regular.otf"); /* Путь к файлу со шрифтом */
+    }
+    body {
+    	background-color: #F7F7F7;
+    }
+		#bugreport {
+      width: 600px;
+      height: 440px;
+      margin: 20px;
+			font-family: proxima, Geneva, Arial, Helvetica, sans-serif;
+		}
+		.warningContainer {
+			margin: 30px 0 30px 0;
+		}
+		.warningImg {
+		  margin: 10px 20px 0 0;
+		}
+		.warningText {
+		  display: inline-block;
+		  vertical-align: top;
+		  color: #BD2833;
+		  font-size: 18pt;
+		}
+		.choiseButton {
+		  display: block;
+		  width: 400px;
+		  border: 2px solid #475D84;
+		  border-radius: 6px;
+		  padding: 10px;
+		  margin: 20px 40px 20px 80px;
+		}
+		.choiseButton:hover {
+			border: 2px solid #4168ad;
+			color: #4168ad;
+		}
+		.buttonImg {
+		  display: inline-block;
+		  margin: 6px 20px 0 20px;
+		}
+		.choiseButtonText {
+		  display: inline-block;
+		  vertical-align: top;
+		  color: #475D84;
+		  font-size: 14pt;
+		}
+		.highlightedText {
+			color: #4168ad;
+		}
+		.highlightedBackground {
+			background-color: #4168ad !important;
+		}
+		.highlightedBackgroundWhite {
+			background-color: white !important;
+		}
+		.highlightedBorder {
+			border: 2px solid #4168ad !important;
+		}
+		.errorDescription {
+		  margin: 20px 20px 0 0;
+		  color: #D8D8D8;
+		}
+		#ltsVersion {
+			background-color: #475D84;
+		}
+		#ltsVersion span {
+			color: white;
+		}
+		#warningImg {
+			display: inline-block;
+			width: 42px;
+      height: 38px;
+      margin: 10px 20px 0 0;
+			background: url('./img/BugReport_icon_alert.png') no-repeat;
+			_background:none;
+			-ms-filter:"_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./img/BugReport_icon_alert.png',sizingMethod='crop')";
+			_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./img/BugReport_icon_alert.png',sizingMethod='crop');
+		}
+		#ltsVersionImg {
+			display: inline-block;
+			width: 31px;
+      height: 31px;
+      margin: 6px 20px 0 20px;
+			background: url('./img/BugReport_icon_previous.png') no-repeat;
+			_background:none;
+			-ms-filter:"_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./img/BugReport_icon_previous.png',sizingMethod='crop')";
+			_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./img/BugReport_icon_previous.png',sizingMethod='crop');
+		}
+		#continueExecButtonImg {
+			display: inline-block;
+			width: 31px;
+      height: 31px;
+      margin: 6px 20px 0 20px;
+			background: url('./img/BugReport_icon_skip.png') no-repeat;
+			_background:none;
+			-ms-filter:"_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./img/BugReport_icon_skip.png',sizingMethod='crop')";
+			_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./img/BugReport_icon_skip.png',sizingMethod='crop');
+		}
+		#ieUpdateButtonImg {
+			display: inline-block;
+			width: 31px;
+      height: 31px;
+      margin: 6px 20px 0 20px;
+			background: url('./img/BugReport_icon_ie.png') no-repeat;
+			_background:none;
+			-ms-filter:"_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./img/BugReport_icon_ie.png',sizingMethod='crop')";
+			_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./img/BugReport_icon_ie.png',sizingMethod='crop');
+		}
+	</style>
+
+</head>
+
+
+
+<body>
+  <div id="bugreport">
+
+  	<div class="warningContainer">
+  	  <i class="pngImg" id="warningImg"></i>
+  		<span class='warningText'>Произошла ошибка в работе приложения, <br> выберите один из варинтов продолжения<script type="text/javascript">l(copyright.attention)</script></span>
+  	</div> <!--header-->
+
+  	<div class='choiseButton' id="ltsVersion">
+      <i class="pngImg" id="ltsVersionImg"></i>
+      <span class='choiseButtonText'>Запустить предыдущую версию <br> DriverPack Solution <script type="text/javascript">l(copyright.ieUpdate)</script></span>
+  	</div> <!--/choiseButton-->
+
+  	<div class='choiseButton' id="continueExec">
+      <i class="pngImg" id="continueExecButtonImg"></i>
+      <span class='choiseButtonText' id='continueExecButtonText'>Пропустить и продолжить <br> выполнение программы <script type="text/javascript">l(copyright.ieUpdate)</script></span>
+  	</div> <!--/choiseButton-->
+
+  	<div class='choiseButton' id="ieUpdate">
+  		<i class="pngImg" id="ieUpdateButtonImg"></i>
+      <span class='choiseButtonText' id='ieUpdateButtonText'>Обновить версию браузера <br> Internet Explorer <script type="text/javascript">l(copyright.ieUpdate)</script>(<script type="text/javascript">if(IEOfferVersion) { l("IE" + IEOfferVersion) }</script>)</span>
+  	</div> <!--/choiseButton-->
+
+    <div class="errorDescription">
+  		<p class="errorMessage">
+  			File: DriverPackSolution.html<script type="text/javascript">l(errFile)</script><br/>
+  			Line: 5644<script type="text/javascript">l(linenumber)</script><br/>
+  			Error: Unspecified error<script type="text/javascript">l(msg)</script>
+  		</p>
+  	</div> <!--/errorDescription-->
+
+  </div> <!--/bugreport-->
+
+  <script type="text/javascript">
+		var ltsVersionDiv = document.getElementById('ltsVersion');
+		ltsVersionDiv.style.cursor = 'pointer';
+		ltsVersionDiv.onclick = function() {
+		    // do something...
+		};
+		ltsVersionDiv.onmouseover = function() {
+			ltsVersionDiv.className += " highlightedBackground highlightedBorder";
+		};
+		ltsVersionDiv.onmouseout = function() {
+			ltsVersionDiv.className = ltsVersionDiv.className.replace(/highlightedBackground highlightedBorder/, '');
+		};
+
+		var continueExecDiv = document.getElementById('continueExec');
+		var continueExecButtonText = document.getElementById("continueExecButtonText");
+		continueExecDiv.style.cursor = 'pointer';
+		continueExecDiv.onclick = function() {
+		    // do something...
+		};
+		continueExecDiv.onmouseover = function() {
+			continueExecButtonText.className += " highlightedText";
+			continueExecDiv.className += " highlightedBorder highlightedBackgroundWhite";
+		};
+		continueExecDiv.onmouseout = function() {
+			continueExecButtonText.className = continueExecButtonText.className.replace(/highlightedText/, '');
+			continueExecDiv.className = continueExecDiv.className.replace(/ highlightedBorder highlightedBackgroundWhite/, '');
+		};
+
+		var ieUpdateDiv = document.getElementById('ieUpdate');
+		var ieUpdateButtonText = document.getElementById("ieUpdateButtonText");
+		ieUpdateDiv.style.cursor = 'pointer';
+		ieUpdateDiv.onclick = function() {
+		    // do something...
+		};
+		ieUpdateDiv.onmouseover = function() {
+			ieUpdateButtonText.className += ' highlightedText';
+			ieUpdateDiv.className += ' highlightedBorder highlightedBackgroundWhite';
+		};
+		ieUpdateDiv.onmouseout = function() {
+			ieUpdateButtonText.className = continueExecButtonText.className.replace(/highlightedText/, '');
+			ieUpdateDiv.className = ieUpdateDiv.className.replace(/ highlightedBorder highlightedBackgroundWhite/, '');
+		};
+
+	</script>
+</body>
+</html>
